@@ -8,7 +8,7 @@ app.use(express.static("."));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("*", function (req, res) {
-    res.render("index");
+    res.render("index", { query: req.query });
 });
 
 app.listen(3000, function () {
